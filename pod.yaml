@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-demo-single-pod
+  labels:
+    app: nginx-demo
+    env: test
+    project: yogi
+  namespace: yogi
+spec:
+  containers:
+    - name: nginx-demo-container
+      image: nginx:1.14.2
+      ports:
+        - containerPort: 80
+  restartPolicy: OnFailure
+
