@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: yogi-cronjob-demo
+  labels:
+    env: test
+    project: yogi
+  namespace: yogi
+spec:
+  schedule: "0 17 * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: yogi-demo-container
+              image: busybox
+              imagePullPolicy: IfNotPresent
+              command:
+                - /bin/sh
+                - -c
+                - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure
