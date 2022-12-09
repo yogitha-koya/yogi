@@ -1,2 +1,2 @@
-# ketto
+# yogi
 This is sample repository
