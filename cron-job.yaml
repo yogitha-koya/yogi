@@ -7,7 +7,7 @@ metadata:
     project: yogi
   namespace: yogi
 spec:
-  schedule: "0 17 * * *"
+  schedule: "0 19 * * *"
   jobTemplate:
     spec:
       template:
